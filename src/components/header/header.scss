@@ -1,8 +1,13 @@
 .header {
     text-align: center;
-    min-height: 640px;
     color: #fff;
+    padding-top: 130px;
+    min-height: 260px;
     position: relative;
+    &_big {
+        padding-top: 180px;
+        min-height: 640px;
+    }
     &__links {
         position: absolute;
         top: 30px;
@@ -23,8 +28,11 @@
     }
 }
 
+.hide {
+    display: none !important;
+}
+
 .title {
-    padding-top: 180px;
     font-weight: 700;
     font-size: 40px;
     &__descr {

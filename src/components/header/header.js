@@ -3,18 +3,21 @@ import LogoWrap from './logo-wrap'
 
 import './header.scss'
 
-function Header({bg, color, logo, headerLogo}) {
+function Header({bg, color, logo, headerLogo, headerHeight, h1, descr}) {
+    const bigHeader = headerHeight ? 'header_big': '';
+    const hide = descr ? '': 'hide';
+
     return(
-        <div className='header' style={{backgroundImage:`url("${bg}")`}}>
+        <div className={`header ${bigHeader}`} style={{backgroundImage:`url("${bg}")`}}>
             <div className="container">
                 <HeaderLinks headerLogo={headerLogo}/>
 
-                <h1 className="title">Everything You Love About Coffee</h1>
+                <h1 className="title">{h1}</h1>
 
-                <LogoWrap color={color} logo={logo}/>
+                <LogoWrap color={color} logo={logo} hide={hide}/>
 
-                <h2 className="title__descr">We makes every day full of energy and taste <br /> Want to try our beans?</h2>
-                <button className='more'>More</button>
+                <h2 className="title__descr">{descr}</h2>
+                <button className={`more ${hide}`}>More</button>
             </div>
         </div>
     )
